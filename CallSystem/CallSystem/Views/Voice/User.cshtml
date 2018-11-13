@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row chat-window col-xs-10 col-md-4" id="chat_window_1" style="margin-left:10px;">
+
+    <div class="panel panel-primary" style="height:100%;min-height:100%; padding: 0 0 20px 0 ;">
+        <div class="panel-heading top-bar">
+            <div class="col-md-9 col-xs-9">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Voice      <span id="counter" class="badge badge-danger"></span></h3>
+
+            </div>
+
+        </div>
+
+        <div class="panel-body msg_container_base">
+
+            <ul class="media-list">
+
+
+                <li class="media">
+
+
+                    <div class="media-body clsliMedia">
+
+                        <div class="media" style="margin-top:1;">
+                            <a class="pull-left" style="margin-top:10px;" href="#">
+                                @*<div class="my-circle" title="KM"></div>*@
+                                <p class="p_circle" style="background-color:red;border-radius:50%;color:white;height:30px;width:30px;margin: 0 0 0 0 ;line-height: 30px;text-align: center;">BA</p>
+                            </a>
+                            <div class="media-body">
+
+                                <h5>Shruti karva </h5>
+
+                                <small id="sneak_msg" class="text-muted clsShortmsg ">Buyers Agent</small>
+
+                                @*<small class="text-muted">@d.DateTimeReceived</small>*@
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <input type="hidden" class="clsIsOpen" id="hdnIsopen" value="0" />
+                    <div class="clsloadChatScreen" id=" #loadChatScreen">
+
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+
+
+    <script src="@Url.Content("~/Custom/JS/User.js")"></script>
+    <script src="@Url.Content("~/Custom/JS/details.js")"></script>
+
+
+
+}
+@Styles.Render("~/Custom/CSS/User.css")
+
