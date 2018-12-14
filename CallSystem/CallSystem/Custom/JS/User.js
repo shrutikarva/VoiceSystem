@@ -13,12 +13,20 @@
             var obj = {};
             obj.BusinessPhone1 = $(this).parent().find('.clsBusinessPhone1').val();
             obj.BusinessPhone2 = $(this).parent().find('.clsBusinessPhone2').val();
+            obj.BusinessPhone3 = $(this).parent().find('.clsBusinessPhone3').val();
+            obj.BusinessPhone4 = $(this).parent().find('.clsBusinessPhone4').val();
             obj.MainPhone1 = $(this).parent().find('.clsMainPhone1').val();
             obj.MainPhone2 = $(this).parent().find('.clsMainPhone2').val();
+            obj.MainPhone3 = $(this).parent().find('.clsMainPhone3').val();
+            obj.MainPhone4 = $(this).parent().find('.clsMainPhone4').val();
             obj.Attn1 = $(this).parent().find('.clsAttn1').val();
             obj.Attn2 = $(this).parent().find('.clsAttn2').val();
+            obj.Attn3 = $(this).parent().find('.clsAttn3').val();
+            obj.Attn4 = $(this).parent().find('.clsAttn4').val();
             obj.position1 = $(this).parent().find('.clsPosition1').val();
             obj.position2 = $(this).parent().find('.clsPosition2').val();
+            obj.position3 = $(this).parent().find('.clsPosition3').val();
+            obj.position4 = $(this).parent().find('.clsPosition4').val();
             $.ajax({
                 type: "POST",
                 url: serviceUrl,
