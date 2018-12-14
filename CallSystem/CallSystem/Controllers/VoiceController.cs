@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CallSystem.DataLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +22,24 @@ namespace CallSystem.Controllers
         {
             return View();
         }
+
+
+        //all the recipients list
+        public ActionResult UserChatList(string ClientID = "",string UserID = "",string LoanGUID="")    
+        {
+            Session["UserName"] = ClientID;
+            Session["UserId"] = UserID;
+            TempData["LoanGUID"] = LoanGUID;
+
+            var objUserConversationList = new UserVoice();
+            DataTable dtUserChat = objUserConversationList.GetUserCallList(ClientID, UserID, LoanGUID);
+            var myEnumerable = dtUserChat.AsEnumerable();
+
+          
+            return View();
+        }
+
+        //partial view for each recipient's information
         public ActionResult _details()
         {
             return View();
