@@ -21,7 +21,7 @@ namespace CallSystem.DataLayer
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetAllUserConversationList";
+            cmd.CommandText = "GetAllUserConversationList_Voice";
             cmd.Parameters.Add("@ClientId", SqlDbType.VarChar).Value = ClientId;
             cmd.Parameters.Add("@UserId", SqlDbType.VarChar).Value = UserId;
             cmd.Parameters.Add("@LoanGUID", SqlDbType.VarChar).Value = LoanGUID;

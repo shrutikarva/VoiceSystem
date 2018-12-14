@@ -3,7 +3,7 @@
 
 
     $(".clsliMedia").click(function () {
-
+        //string BusinessPhone1, string BusinessPhone2,string MainPhone1, string MainPhone2,string Attn1, string Attn2, string position1, string position2
         var isOpen = $(this).parent().find('.clsIsOpen').val();
         if (isOpen == "0") {
             var objdiv = $(this).parent().find('.clsloadChatScreen');
@@ -11,7 +11,14 @@
             $(this).parent().find('.clsIsOpen').val("1");
             var serviceUrl = "/Voice/_details";
             var obj = {};
-            obj.clientId = "123";
+            obj.BusinessPhone1 = $(this).parent().find('.clsBusinessPhone1').val();
+            obj.BusinessPhone2 = $(this).parent().find('.clsBusinessPhone2').val();
+            obj.MainPhone1 = $(this).parent().find('.clsMainPhone1').val();
+            obj.MainPhone2 = $(this).parent().find('.clsMainPhone2').val();
+            obj.Attn1 = $(this).parent().find('.clsAttn1').val();
+            obj.Attn2 = $(this).parent().find('.clsAttn2').val();
+            obj.position1 = $(this).parent().find('.clsPosition1').val();
+            obj.position2 = $(this).parent().find('.clsPosition2').val();
             $.ajax({
                 type: "POST",
                 url: serviceUrl,
