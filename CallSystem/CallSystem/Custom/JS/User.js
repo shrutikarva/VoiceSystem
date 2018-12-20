@@ -1,4 +1,28 @@
-﻿$(document).ready(function () {
+﻿var PlaceCall = function (object) {
+    var obj = {};
+    obj.fromNumber = $(object).parent().find(".clsUserPhoneNumber").val();
+    obj.toNumber = $(object).parent().find(".clsBusinessPhone1").val();;
+    $.ajax({
+        type: "POST",
+        url: "/Service/CallPhoneNumber",
+        data: JSON.stringify(obj),
+        contentType: "application/json; charset=utf-8",
+        dataType: "html",
+        success: successFunc,
+        error: errorFunc
+    });
+    function successFunc(data, status) {
+        alert("calling..");
+
+
+    }
+
+    function errorFunc(err) {
+        alert(err.responseText);
+    }
+}
+
+$(document).ready(function () {
 
 
 
