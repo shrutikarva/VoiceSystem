@@ -12,7 +12,35 @@ namespace CallSystem.DataLayer
     {
 
         String strConnString = ConfigurationManager.ConnectionStrings["DbLiveChat"].ConnectionString;
+        public void insertresponse(string response)
+        {
+            SqlConnection con = new SqlConnection(strConnString);
+            SqlCommand cmd = new SqlCommand();
+           // SqlDataReader reader;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "checkresponse";
+            cmd.Parameters.Add("@response", SqlDbType.Int).Value = Convert.ToInt32(response);
+            cmd.Connection = con;
+            try
+            {
+                con.Open();
 
+                cmd.ExecuteNonQuery();
+
+               
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
+            //checkresponse
+        }
         public DataTable GetUserCallList(string ClientId, string UserId, string LoanGUID)
         {
 

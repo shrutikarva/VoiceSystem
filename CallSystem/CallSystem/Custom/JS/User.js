@@ -33,7 +33,7 @@ $(document).ready(function () {
             var objdiv = $(this).parent().find('.clsloadChatScreen');
             $(this).parent().find('.clsloadChatScreen').css('display', '');
             $(this).parent().find('.clsIsOpen').val("1");
-            var serviceUrl = "/Voice/_details";
+            var serviceUrl = "/UserVoice/_details";
             var obj = {};
             obj.BusinessPhone1 = $(this).parent().find('.clsBusinessPhone1').val();
             obj.BusinessPhone2 = $(this).parent().find('.clsBusinessPhone2').val();
