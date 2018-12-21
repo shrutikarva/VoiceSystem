@@ -76,6 +76,7 @@ namespace CallSystem.Controllers
         //partial view for each recipient's information
         public ActionResult _details(string BusinessPhone1, string BusinessPhone2, string BusinessPhone3, string BusinessPhone4, string MainPhone1, string MainPhone2, string MainPhone3, string MainPhone4, string Attn1, string Attn2, string Attn3, string Attn4, string position1, string position2, string position3, string position4)
         {
+            MakeCall();
             ViewBag.BusinessPhone1 = BusinessPhone1;
             ViewBag.BusinessPhone2 = BusinessPhone2;
             ViewBag.BusinessPhone3 = BusinessPhone3;
@@ -103,7 +104,9 @@ namespace CallSystem.Controllers
             var to = new PhoneNumber("+971554113975");
             var from = new PhoneNumber("7342940754");
             var call = CallResource.Create(to, from,
-                url: new Uri("http://demo.twilio.com/docs/voice.xml"));
+                                url: new Uri("http://083fcd9b.ngrok.io/Twilio/setcall.xml"));
+
+     // url: new Uri("http://demo.twilio.com/docs/voice.xml"));
 
             Console.WriteLine(call.Sid);
         }
